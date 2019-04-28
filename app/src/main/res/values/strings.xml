@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Alarms</string>
+    <string name="one_time">One Time Alarms</string>
+    <string name="rec_alarms">Recurrent Alarms</string>
+    <string name="loc_alarms">Location Alarms</string>
+</resources>
