@@ -6,11 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="225dp"
+        android:onClick="gotoOneTimeAlarm"
         android:text="@string/one_time"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="340dp"
+        android:onClick="gotoRecursiveAlarm"
         android:text="@string/rec_alarms"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
