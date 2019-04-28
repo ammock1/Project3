@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Alarms</string>
+    <string name="one_time">One Time Alarms</string>
+    <string name="rec_alarms">Recurrent Alarms</string>
+    <string name="loc_alarms">Location Alarm</string>
+    <string name="cur_int">Current Interval:</string>
+    <string name="change_int">Change Interval</string>
+    <string name="hours">Hours:</string>
+    <string name="minutes">Minutes:</string>
+</resources>
