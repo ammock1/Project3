@@ -18,13 +18,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(goToLoc);
     }
 
-    public void gotoOneTimeAlarm(View view) {
-        Intent gotoOneTimeAlarm = new Intent(this, OneTimeAlarm.class);
-        startActivity(gotoOneTimeAlarm);
+    public void gotoAlarmByDate(View view) {
+        Intent gotoAlarmByDate = new Intent(this, DateAlarm.class);
+        startActivity(gotoAlarmByDate);
     }
 
-    public void gotoRecursiveAlarm(View view) {
-        Intent gotoRecursiveAlarm = new Intent(this, RecursiveAlarm.class);
-        startActivity(gotoRecursiveAlarm);
+    public void gotoAlarmByTimer(View view) {
+        Intent gotoAlarmByTimer = new Intent(this, TimerAlarm.class);
+        startActivity(gotoAlarmByTimer);
     }
 }

@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LocAlarm"></activity>
-        <activity android:name=".OneTimeAlarm"></activity>
-        <activity android:name=".RecursiveAlarm"></activity>
+        <activity android:name=".DateAlarm"></activity>
+        <activity android:name=".TimerAlarm"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
