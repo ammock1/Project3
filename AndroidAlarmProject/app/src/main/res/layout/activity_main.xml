@@ -35,6 +35,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateAlarmButton" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/button3"
@@ -48,5 +49,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timerAlarmButton" />
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
 </android.support.constraint.ConstraintLayout>
