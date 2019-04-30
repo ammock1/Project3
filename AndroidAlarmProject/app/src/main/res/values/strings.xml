@@ -7,4 +7,17 @@
     <string name="change_int">Change Interval</string>
     <string name="hours">Hours:</string>
     <string name="minutes">Minutes:</string>
+    
+    <string-array name="repeatEvery">
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+    <string-array name="timeZone">
+        <item>Eastern</item>
+        <item>Central</item>
+        <item>Mountain</item>
+        <item>Pacific</item>
+    </string-array>
 </resources>
