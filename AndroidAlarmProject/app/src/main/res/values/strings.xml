@@ -7,7 +7,11 @@
     <string name="change_int">Change Interval</string>
     <string name="hours">Hours:</string>
     <string name="minutes">Minutes:</string>
-    
+    <string name="enter_message_here">Enter Message Here</string>
+    <string name="create_alarm_by_timer">Create Alarm By Timer</string>
+    <string name="time">Time</string>
+    <string name="set_alarm">Set Alarm</string>
+
     <string-array name="repeatEvery">
         <item>Day</item>
         <item>Week</item>
