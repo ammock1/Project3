@@ -31,7 +31,7 @@
         android:layout_marginLeft="221dp"
         android:ems="10"
         android:hint="0"
-        android:inputType="time"
+        android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/locHoursLabel"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -43,7 +43,7 @@
         android:layout_marginLeft="221dp"
         android:ems="10"
         android:hint="2"
-        android:inputType="time"
+        android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/locMinsLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

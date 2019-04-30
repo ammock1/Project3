@@ -49,6 +49,7 @@ public class LocationService extends Service {
         @Override
         public void onLocationChanged(android.location.Location loc){
             Log.i("location","Location changed");
+            LocAlarmObj.getInstance().setAlarm(mContext);
         }
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras){

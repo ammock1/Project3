@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 public class LocAlarm extends AppCompatActivity {
-
+//Activity that gets updates to Location Alarm's interval
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
