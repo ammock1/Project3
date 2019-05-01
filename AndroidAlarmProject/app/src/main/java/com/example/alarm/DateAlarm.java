@@ -25,6 +25,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -204,6 +205,7 @@ public class DateAlarm extends AppCompatActivity implements TimePickerDialog.OnT
         Calendar c = Calendar.getInstance(timeZone);
         RadioButton oneTimeRadio = findViewById(R.id.radioButtonOneTime);
         RadioButton recursiveRadio = findViewById(R.id.radioButtonRecursive);
+        EditText alarmMessage = findViewById(R.id.dateAlarmMessage);
         if(year < c.get(Calendar.YEAR)){
             if(month < c.get(Calendar.MONTH)){
                 if(day < c.get(Calendar.DAY_OF_MONTH)){
@@ -229,6 +231,7 @@ public class DateAlarm extends AppCompatActivity implements TimePickerDialog.OnT
             Log.i("One time alarm", "Did I make it here?");
 
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+            NotificationHelper.setNotificationMessage(String.valueOf(alarmMessage.getText()));
 
             Toast.makeText(DateAlarm.this, "New One Time Alarm Created for "+ DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime()), Toast.LENGTH_SHORT).show();
         }
@@ -252,7 +255,7 @@ public class DateAlarm extends AppCompatActivity implements TimePickerDialog.OnT
             else if(frequency.equals("Hour"))
                 alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), AlarmManager.INTERVAL_HOUR, pendingIntent);
 
-            Toast.makeText(DateAlarm.this, "New Repeating Alarm Created", Toast.LENGTH_SHORT).show();
+            Toast.makeText(DateAlarm.this, "New Repeating Alarm Created for "+ DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime()) +" Repeating Every "+frequency, Toast.LENGTH_SHORT).show();
         }
     }
 }

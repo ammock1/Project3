@@ -12,6 +12,7 @@ import android.support.v4.app.NotificationCompat;
 public class NotificationHelper extends ContextWrapper {
     public static final String channelID = "channelID";
     public static final String channelName = "Channel Name";
+    private static String notificationMessage = "Default Alarm Message";
 
     private NotificationManager mManager;
 
@@ -40,7 +41,11 @@ public class NotificationHelper extends ContextWrapper {
     public NotificationCompat.Builder getChannelNotification() {
         return new NotificationCompat.Builder(getApplicationContext(), channelID)
                 .setContentTitle("Alarm!")
-                .setContentText("Your AlarmManager is working.")
+                .setContentText(notificationMessage)
                 .setSmallIcon(R.drawable.ic_one);
+    }
+
+    public static void setNotificationMessage(String message){
+        notificationMessage = message;
     }
 }
