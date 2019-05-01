@@ -16,7 +16,6 @@
         <activity android:name=".DateAlarm"></activity>
         <activity android:name=".TimerAlarm"></activity>
         <service android:name=".LocationService"></service>
-        <service android:name=".NotificationHelper"></service>
         <receiver android:name=".LocAlarmObj"></receiver>
         <service android:name=".LocationService"/>
         <activity android:name=".MainActivity">

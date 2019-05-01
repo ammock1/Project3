@@ -24,10 +24,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.i("creation", "Main Activity created");
 
-        //Start Notification service
-        Intent note = new Intent(this, NotificationService.class);
-        startService(note);
-
         //Start location service
         if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
             Log.i("permission", "Permission denied");
