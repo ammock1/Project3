@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
             startService(i);
         }
         //Start Location Alarm
+        LocAlarmObj.getInstance().cancelAlarm(this);
+        LocAlarmObj.getInstance().setInterval(120000);
         LocAlarmObj.getInstance().setAlarm(this);
 
     }

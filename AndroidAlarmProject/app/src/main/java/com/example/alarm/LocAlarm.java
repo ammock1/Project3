@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 
 public class LocAlarm extends AppCompatActivity {
@@ -27,6 +28,7 @@ public class LocAlarm extends AppCompatActivity {
                     long interval = minutes * 60000;
                     LocAlarmObj.getInstance().cancelAlarm(mContext);
                     LocAlarmObj.getInstance().setInterval(interval);
+                    Log.i("alarm", "Location Alarm Interval changed to: "+interval+" milliseconds");
                     LocAlarmObj.getInstance().setAlarm(mContext);
                 }
 
