@@ -24,23 +24,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/locHours"
-        android:layout_width="51dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="221dp"
-        android:layout_marginLeft="221dp"
-        android:ems="10"
-        android:hint="0"
-        android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/locHoursLabel"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
         android:id="@+id/locMins"
         android:layout_width="51dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="221dp"
-        android:layout_marginLeft="221dp"
+        android:layout_marginStart="234dp"
+        android:layout_marginLeft="234dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginRight="114dp"
         android:ems="10"
         android:hint="2"
         android:inputType="number"
@@ -63,31 +53,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/locHoursLabel"
-        android:layout_width="107dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="197dp"
-        android:layout_marginEnd="216dp"
-        android:layout_marginRight="216dp"
-        android:gravity="right|center_vertical"
-        android:text="@string/hours"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/locMinsLabel"
         android:layout_width="114dp"
         android:layout_height="50dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginLeft="97dp"
+        android:layout_marginTop="176dp"
         android:gravity="right|center_vertical"
         android:text="@string/minutes"
         android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/locMins"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
