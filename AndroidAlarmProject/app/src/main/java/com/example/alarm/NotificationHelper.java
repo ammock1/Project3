@@ -1,11 +1,15 @@
 package com.example.alarm;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.os.Build;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 
 
@@ -39,9 +43,23 @@ public class NotificationHelper extends ContextWrapper {
     }
 
     public NotificationCompat.Builder getChannelNotification() {
+
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        String location="";
+        double latitude=0;
+        double longitude=0;
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+
+            latitude = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).getLatitude();
+            longitude = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).getLongitude();
+            location = "Latitude:" + latitude +", Longitude: " + longitude;
+        }
+
         return new NotificationCompat.Builder(getApplicationContext(), channelID)
                 .setContentTitle("Alarm!")
-                .setContentText(notificationMessage)
+                .setContentText(notificationMessage+" @ "+location)
                 .setSmallIcon(R.drawable.ic_one);
     }
 
