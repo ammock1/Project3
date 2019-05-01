@@ -150,6 +150,8 @@ public class DateAlarm extends AppCompatActivity implements TimePickerDialog.OnT
         int idInt = parent.getId();
         switch (idInt){
             case R.id.timeZoneSpinner:
+                if(parent.getItemAtPosition(position).toString().equals("Default Time Zone"))
+                    timeZone = TimeZone.getDefault();
                 if(parent.getItemAtPosition(position).toString().equals("Eastern"))
                     timeZone = TimeZone.getTimeZone("US/Eastern");
                 if(parent.getItemAtPosition(position).toString().equals("Central"))
