@@ -57,15 +57,6 @@ public class MainActivity extends AppCompatActivity {
         Intent gotoAlarmByTimer = new Intent(this, TimerAlarm.class);
         startActivity(gotoAlarmByTimer);
     }
-    public void gotoOneTimeAlarm(View view) {
-        Intent gotoOneTimeAlarm = new Intent(this, OneTimeAlarm.class);
-        startActivity(gotoOneTimeAlarm);
-    }
-
-    public void gotoRecursiveAlarm(View view) {
-        Intent gotoRecursiveAlarm = new Intent(this, RecursiveAlarm.class);
-        startActivity(gotoRecursiveAlarm);
-    }
 
     @Override
     protected void onResume(){

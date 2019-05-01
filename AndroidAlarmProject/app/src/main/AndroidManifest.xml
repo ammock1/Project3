@@ -16,8 +16,6 @@
         <activity android:name=".DateAlarm"></activity>
         <activity android:name=".TimerAlarm"></activity>
         <service android:name=".LocationService"/>
-        <activity android:name=".OneTimeAlarm"></activity>
-        <activity android:name=".RecursiveAlarm"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

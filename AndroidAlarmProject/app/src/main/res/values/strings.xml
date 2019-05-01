@@ -10,11 +10,12 @@
     
     <string-array name="repeatEvery">
         <item>Day</item>
-        <item>Week</item>
-        <item>Month</item>
-        <item>Year</item>
+        <item>15 Minutes</item>
+        <item>Half Hour</item>
+        <item>Hour</item>
     </string-array>
     <string-array name="timeZone">
+        <item>Default Time Zone</item>
         <item>Eastern</item>
         <item>Central</item>
         <item>Mountain</item>
