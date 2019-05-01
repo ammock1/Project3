@@ -19,6 +19,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -30,6 +31,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -213,7 +215,7 @@ public class DateAlarm extends AppCompatActivity implements TimePickerDialog.OnT
                 }
             }
         }
-        else if(oneTimeRadio.isChecked()){
+        if(oneTimeRadio.isChecked()){
             c.set(Calendar.YEAR, year);
             c.set(Calendar.MONTH, month);
             c.set(Calendar.DAY_OF_MONTH, day);
@@ -224,12 +226,13 @@ public class DateAlarm extends AppCompatActivity implements TimePickerDialog.OnT
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
             Intent intent = new Intent(this, AlertReceiver.class);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+            Log.i("One time alarm", "Did I make it here?");
 
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
 
-            Toast.makeText(DateAlarm.this, "New One Time Alarm Created", Toast.LENGTH_SHORT).show();
+            Toast.makeText(DateAlarm.this, "New One Time Alarm Created for "+ DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime()), Toast.LENGTH_SHORT).show();
         }
-        else if(recursiveRadio.isChecked()){
+        if(recursiveRadio.isChecked()){
             c.set(Calendar.YEAR, year);
             c.set(Calendar.MONTH, month);
             c.set(Calendar.DAY_OF_MONTH, day);
