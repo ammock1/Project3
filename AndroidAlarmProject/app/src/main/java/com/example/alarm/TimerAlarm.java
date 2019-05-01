@@ -29,11 +29,21 @@ public class TimerAlarm extends AppCompatActivity {
 
     public void onButtonClicked(View view) {
         EditText messageText = findViewById(R.id.messageText);
-        String message = messageText.getText().toString();
+        String message ="";
+        if(messageText.getText().toString().length() > 0)
+           message = messageText.getText().toString();
+
         EditText timeText = findViewById(R.id.timerText);
-        int mins = Integer.parseInt(timeText.getText().toString());
+        String timeTextStr = timeText.getText().toString();
+        int mins = 0;
+        if(timeTextStr.length() > 0)
+            mins = Integer.parseInt(timeTextStr);
+
         EditText dayText = findViewById(R.id.dayText);
-        int days = Integer.parseInt(dayText.getText().toString());
+        String dayTextStr = dayText.getText().toString();
+        int days = 0;
+        if(timeTextStr.length() > 0)
+            days = Integer.parseInt(dayTextStr);
 
         scheduleTimedNotification(days, mins, message);
     }
