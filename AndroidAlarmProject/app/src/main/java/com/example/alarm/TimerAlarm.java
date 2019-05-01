@@ -1,16 +1,21 @@
 package com.example.alarm;
 
+import android.Manifest;
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.EditText;
 
 public class TimerAlarm extends AppCompatActivity {
 
@@ -23,19 +28,35 @@ public class TimerAlarm extends AppCompatActivity {
     }
 
     public void onButtonClicked(View view) {
-        TextView messageTextView = findViewById(R.id.messageText);
+        EditText messageTextView = findViewById(R.id.messageText);
         String message = messageTextView.getText().toString();
-        TextView timeTextView = findViewById(R.id.timerText);
-        int mins = Integer.parseInt((String) timeTextView.getText());
+        EditText timeTextView = findViewById(R.id.timerText);
+        int mins = Integer.parseInt(timeTextView.getText().toString());
 
         scheduleTimedNotification(mins, message);
     }
 
     private void scheduleTimedNotification(int minutes, String message) {
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        String location="";
+        double latitude=0;
+        double longitude=0;
 
-        Notification.Builder builder = new Notification.Builder(this);
-        builder.setContentTitle("Timer set at location "/*ADD LOCATION*/);
-        builder.setContentText(message);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+
+                    latitude = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).getLatitude();
+                    longitude = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).getLongitude();
+                    location = "Latitude:" + latitude +", Longitude: " + longitude;
+        }
+
+
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, TimerAlarmReceiver.CHANNEL_ID);
+        builder.setContentTitle("Timer Notification");
+        builder.setStyle(new NotificationCompat.BigTextStyle().bigText(location+"\n"+message));
+        builder.setContentText(location+"...");
+        builder.setSmallIcon(R.drawable.ic_launcher_background);
         Notification notification = builder.build();
 
         Intent notificationIntent = new Intent(this, TimerAlarmReceiver.class);
