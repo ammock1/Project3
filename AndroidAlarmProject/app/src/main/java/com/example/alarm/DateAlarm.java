@@ -255,6 +255,7 @@ public class DateAlarm extends AppCompatActivity implements TimePickerDialog.OnT
             else if(frequency.equals("Hour"))
                 alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), AlarmManager.INTERVAL_HOUR, pendingIntent);
 
+            NotificationHelper.setNotificationMessage(String.valueOf(alarmMessage.getText()));
             Toast.makeText(DateAlarm.this, "New Repeating Alarm Created for "+ DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime()) +" Repeating Every "+frequency, Toast.LENGTH_SHORT).show();
         }
     }
