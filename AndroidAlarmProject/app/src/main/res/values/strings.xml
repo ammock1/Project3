@@ -5,6 +5,7 @@
     <string name="loc_alarms">Location Alarm</string>
     <string name="cur_int">Current Interval:</string>
     <string name="change_int">Change Interval</string>
+    <string name="days">Days:</string>
     <string name="hours">Hours:</string>
     <string name="minutes">Minutes:</string>
     <string name="enter_message_here">Enter Message Here</string>

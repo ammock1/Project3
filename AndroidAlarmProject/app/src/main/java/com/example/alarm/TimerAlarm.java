@@ -28,15 +28,17 @@ public class TimerAlarm extends AppCompatActivity {
     }
 
     public void onButtonClicked(View view) {
-        EditText messageTextView = findViewById(R.id.messageText);
-        String message = messageTextView.getText().toString();
-        EditText timeTextView = findViewById(R.id.timerText);
-        int mins = Integer.parseInt(timeTextView.getText().toString());
+        EditText messageText = findViewById(R.id.messageText);
+        String message = messageText.getText().toString();
+        EditText timeText = findViewById(R.id.timerText);
+        int mins = Integer.parseInt(timeText.getText().toString());
+        EditText dayText = findViewById(R.id.dayText);
+        int days = Integer.parseInt(dayText.getText().toString());
 
-        scheduleTimedNotification(mins, message);
+        scheduleTimedNotification(days, mins, message);
     }
 
-    private void scheduleTimedNotification(int minutes, String message) {
+    private void scheduleTimedNotification(int days, int minutes, String message) {
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         String location="";
         double latitude=0;
@@ -65,6 +67,7 @@ public class TimerAlarm extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         long futureInMillis = SystemClock.elapsedRealtime() + (minutes * 60000);
+        futureInMillis += days * 60000 * 24 * 60;
         AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent);
     }
