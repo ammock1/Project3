@@ -1,28 +1,21 @@
 package com.example.alarm;
 
-import android.Manifest;
+import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
 
 public class LocationService extends Service {
     Context mContext;
     LocationManager locationManager;
-    /*public LocationService(){
-        super("LocationService");
-        Log.i("creation", "LocationService created");
-    }*/
+
     @Override
     public void onCreate(){
 
@@ -49,6 +42,10 @@ public class LocationService extends Service {
         @Override
         public void onLocationChanged(android.location.Location loc){
             Log.i("location","Location changed");
+            LocAlarmObj.getInstance().cancelAlarm(mContext);
+            LocAlarmObj.getInstance().setAlarm(mContext);
+            NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.cancel(1);
         }
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras){
