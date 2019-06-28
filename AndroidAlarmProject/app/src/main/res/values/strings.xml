@@ -5,6 +5,25 @@
     <string name="loc_alarms">Location Alarm</string>
     <string name="cur_int">Current Interval:</string>
     <string name="change_int">Change Interval</string>
+    <string name="days">Days:</string>
     <string name="hours">Hours:</string>
     <string name="minutes">Minutes:</string>
+    <string name="enter_message_here">Enter Message Here</string>
+    <string name="create_alarm_by_timer">Create Alarm By Timer</string>
+    <string name="time">Time</string>
+    <string name="set_alarm">Set Alarm</string>
+
+    <string-array name="repeatEvery">
+        <item>Day</item>
+        <item>15 Minutes</item>
+        <item>Half Hour</item>
+        <item>Hour</item>
+    </string-array>
+    <string-array name="timeZone">
+        <item>Default Time Zone</item>
+        <item>Eastern</item>
+        <item>Central</item>
+        <item>Mountain</item>
+        <item>Pacific</item>
+    </string-array>
 </resources>

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.alarm">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:name="android.hardware.location.gps"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,8 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LocAlarm"></activity>
-        <activity android:name=".OneTimeAlarm"></activity>
-        <activity android:name=".RecursiveAlarm"></activity>
+        <activity android:name=".DateAlarm"></activity>
+        <activity android:name=".TimerAlarm"></activity>
+        <service android:name=".LocationService"></service>
+        <receiver android:name=".LocAlarmObj"></receiver>
+        <service android:name=".LocationService"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +25,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".TimerAlarmReceiver">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".AlertReceiver"/>
     </application>
 
 </manifest>
